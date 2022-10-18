@@ -3,12 +3,12 @@ kind: Project
 metadata:
   annotations:
     cnrm.cloud.google.com/auto-create-network: "false"
-  name: prj-bych-gke-lab
+  name: prj-bych-gke-lab001
   namespace: config-control
 spec:
-  name: prj-bych-gke-lab
+  name: prj-bych-gke-lab001
   billingAccountRef:
     external: "019C42-BDA7E5-0365C4"
   folderRef:
-    external: "666923264530"
-  resourceID: prj-bych-gke-lab
+    external: "668123956648"
+  resourceID: prj-bych-gke-lab001
