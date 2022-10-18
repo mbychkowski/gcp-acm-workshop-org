@@ -1,0 +1,29 @@
+apiVersion: constraints.gatekeeper.sh/v1beta1
+kind: K8sRequiredAnnotations
+metadata:
+  name: namespaces-required-project-id-annotation
+spec:
+  enforcementAction: deny
+  match:
+    kinds:
+    - apiGroups:
+      - ""
+      kinds:
+      - Namespace
+    excludedNamespaces:
+    - cnrm-system
+    - config-control
+    - config-management-monitoring
+    - config-management-system
+    - configconnector-operator-system
+    - default
+    - gatekeeper-system
+    - krmapihosting-monitoring
+    - krmapihosting-system
+    - kube-node-lease
+    - kube-public
+    - kube-system
+    - resource-group-system
+  parameters:
+    annotations:
+    - key: cnrm.cloud.google.com/project-id
