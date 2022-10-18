@@ -7,8 +7,6 @@ metadata:
   namespace: config-control
 spec:
   name: prj-bych-gke-lab001
-  billingAccountRef:
-    external: "019C42-BDA7E5-0365C4"
   folderRef:
     external: "668123956648"
   resourceID: prj-bych-gke-lab001
