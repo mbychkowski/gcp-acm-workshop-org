@@ -1,0 +1,13 @@
+apiVersion: configsync.gke.io/v1beta1
+kind: RepoSync
+metadata:
+  name: repo-sync
+  namespace: prj-bych-gke-lab001
+spec:
+  sourceFormat: unstructured
+  git:
+   repo: https://github.com/mbychkowski/gcp-acm-workshop-tenant-project
+   revision: HEAD
+   branch: main
+   dir: "."
+   auth: none
