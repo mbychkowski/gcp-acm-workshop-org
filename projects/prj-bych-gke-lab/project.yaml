@@ -1,0 +1,14 @@
+apiVersion: resourcemanager.cnrm.cloud.google.com/v1beta1
+kind: Project
+metadata:
+  annotations:
+    cnrm.cloud.google.com/auto-create-network: "false"
+  name: prj-bych-gke-lab
+  namespace: config-control
+spec:
+  name: prj-bych-gke-lab
+  billingAccountRef:
+    external: "019C42-BDA7E5-0365C4"
+  folderRef:
+    external: "666923264530"
+  resourceID: prj-bych-gke-lab
