@@ -1,0 +1,3 @@
+export CONFIG_CONTROLLER_NAME=k8s-acm
+export CONFIG_CONTROLLER_LOCATION=northamerica-northeast1
+export CONFIG_CONTROLLER_NETWORK=main-vpc
