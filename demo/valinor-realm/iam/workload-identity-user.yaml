@@ -1,0 +1,15 @@
+apiVersion: iam.cnrm.cloud.google.com/v1beta1
+kind: IAMPartialPolicy
+metadata:
+  name: prj-bych-gke-lab001-sa-wi-user
+  namespace: config-control
+  annotations:
+    config.kubernetes.io/depends-on: iam.cnrm.cloud.google.com/namespaces/config-control/IAMServiceAccount/prj-bych-gke-lab001
+spec:
+  resourceRef:
+    name: prj-bych-gke-lab001
+    kind: IAMServiceAccount
+  bindings:
+    - role: roles/iam.workloadIdentityUser
+      members:
+        - member: serviceAccount:bych-lab-iac-core.svc.id.goog[cnrm-system/cnrm-controller-manager-prj-bych-gke-lab001]

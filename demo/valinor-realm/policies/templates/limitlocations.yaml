@@ -1,0 +1,42 @@
+apiVersion: templates.gatekeeper.sh/v1
+kind: ConstraintTemplate
+metadata:
+  name: limitlocations
+  annotations:
+    description: "Allowed GCP locations."
+spec:
+  crd:
+    spec:
+      names:
+        kind: LimitLocations
+      validation:
+        openAPIV3Schema:
+          type: object
+          properties:
+            locations:
+              description: List of allowed GCP locations
+              type: array
+              items:
+                type: string
+  targets:
+    - target: admission.k8s.gatekeeper.sh
+      rego: |-
+        package limitlocations
+        violation[{"msg":msg}] {
+          contains(input.review.object.apiVersion, "cnrm.cloud.google.com")
+          not allowedLocation(input.review.object.spec.location)
+          msg := sprintf("%s %s uses a disallowed location: %s, authorized locations are: %s", [input.review.object.kind, input.review.object.metadata.name, input.review.object.spec.location, input.parameters.locations])
+        }
+        violation[{"msg":msg}] {
+          contains(input.review.object.apiVersion, "cnrm.cloud.google.com")
+          not allowedLocation(input.review.object.spec.region)
+          msg := sprintf("%s %s uses a disallowed location: %s, authorized locations are: %s", [input.review.object.kind, input.review.object.metadata.name, input.review.object.spec.region, input.parameters.locations])
+        }
+        allowedLocation(reviewLocation) {
+          locations := input.parameters.locations
+          satisfied := [good |
+            location = locations[_]
+            good = lower(location) == lower(reviewLocation)
+          ]
+          any(satisfied)
+        }
