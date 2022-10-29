@@ -1,13 +1,13 @@
-# apiVersion: serviceusage.cnrm.cloud.google.com/v1beta1
-# kind: Service
-# metadata:
-#   annotations:
-#     cnrm.cloud.google.com/deletion-policy: "abandon"
-#     cnrm.cloud.google.com/disable-dependent-services: "false"
-#     config.kubernetes.io/depends-on: resourcemanager.cnrm.cloud.google.com/namespaces/config-control/Project/kowski-iad-core
-#   name: kowski-iad-core-gkehub
-#   namespace: config-control
-# spec:
-#   projectRef:
-#     name: kowski-iad-core
-#   resourceID: gkehub.googleapis.com
+apiVersion: serviceusage.cnrm.cloud.google.com/v1beta1
+kind: Service
+metadata:
+  annotations:
+    cnrm.cloud.google.com/deletion-policy: "abandon"
+    cnrm.cloud.google.com/disable-dependent-services: "false"
+    config.kubernetes.io/depends-on: resourcemanager.cnrm.cloud.google.com/namespaces/config-control/Project/kowski-iad-core
+  name: kowski-iad-core-gkehub
+  namespace: config-control
+spec:
+  projectRef:
+    name: kowski-iad-core
+  resourceID: gkehub.googleapis.com
