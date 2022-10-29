@@ -2,12 +2,12 @@
 # kind: RepoSync
 # metadata:
 #   name: repo-sync
-#   namespace: valinor-realm
+#   namespace: ${TENANT_PROJECT_ID}
 # spec:
 #   sourceFormat: unstructured
 #   git:
-#     repo: git@github.com:mbychkowski/gcp-acm-workshop-org.git
+#     repo: ${GKE_PLATFORM_REPO_URL}
 #     revision: HEAD
 #     branch: main
-#     dir: demo/valinor-realm/tenant
+#     dir: demo/${TENANT_PROJECT_ID}/tenant
 #     auth: none

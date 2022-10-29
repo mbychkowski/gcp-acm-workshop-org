@@ -2,10 +2,10 @@
 # kind: RoleBinding
 # metadata:
 #   name: syncs-repo
-#   namespace: valinor-realm
+#   namespace: ${TENANT_PROJECT_ID}
 # subjects:
 # - kind: ServiceAccount
-#   name: ns-reconciler-valinor-realm
+#   name: ns-reconciler-${TENANT_PROJECT_ID}
 #   namespace: config-management-system
 # roleRef:
 #   kind: ClusterRole
