@@ -11,7 +11,7 @@ spec:
     repo: git@github.com:mbychkowski/gcp-acm-workshop-org
     revision: HEAD
     branch: main
-    dir: demo/valinor-realm/org
+    dir: demo/kowski-iad-core/org
     auth: ssh
     secretRef:
       name: git-creds
