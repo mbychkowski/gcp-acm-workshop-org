@@ -1,6 +1,7 @@
 export CONFIG_CONTROLLER_NAME=k8s-acm
 export CONFIG_CONTROLLER_LOCATION=northamerica-northeast1
 export CONFIG_CONTROLLER_NETWORK=main-vpc
+export CONFIG_CONTROLLER_SA=service-512806283726@gcp-sa-yakima.iam.gserviceaccount.com
 
 export ORG_REPO_URL=git@github.com:mbychkowski/gcp-acm-workshop-org.git
 export ORG_REPO_NAME_WITH_OWNER=mbychkowski/gcp-acm-workshop-org
