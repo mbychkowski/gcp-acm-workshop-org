@@ -1,0 +1,23 @@
+apiVersion: templates.gatekeeper.sh/v1
+kind: ConstraintTemplate
+metadata:
+  name: requirenamespaceconfigconnectorcontext
+  annotations:
+    description: "Requires that every namespaces defined in the cluster has a ConfigConnectorContext. Note: This constraint is referential. See https://cloud.google.com/anthos-config-management/docs/how-to/creating-constraints#referential for details."
+spec:
+  crd:
+    spec:
+      names:
+        kind: RequireNamespaceConfigConnectorContext
+  targets:
+    - target: admission.k8s.gatekeeper.sh
+      rego: |-
+        package requirenamespaceconfigconnectorcontext
+          violation[{"msg": msg}] {
+          input.review.kind.kind == "Namespace"
+          not namespace_has_configconnectorcontext(input.review.object.metadata.name)
+          msg := sprintf("Namespace <%v> does not have a ConfigConnectorContext", [input.review.object.metadata.name])
+        }
+        namespace_has_configconnectorcontext(ns) {
+          ccc := data.inventory.namespace[ns][_].ConfigConnectorContext[_]
+        }
