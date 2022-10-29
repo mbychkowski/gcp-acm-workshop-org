@@ -3,7 +3,5 @@ kind: ConfigConnectorContext
 metadata:
   name: configconnectorcontext.core.cnrm.cloud.google.com
   namespace: kowski-iad-core
-  annotations:
-    config.kubernetes.io/depends-on: iam.cnrm.cloud.google.com/namespaces/config-control/IAMServiceAccount/kowski-iad-core
 spec:
   googleServiceAccount: kowski-iad-core@kowski-iad-core.iam.gserviceaccount.
