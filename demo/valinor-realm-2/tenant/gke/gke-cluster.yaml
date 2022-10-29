@@ -1,0 +1,49 @@
+apiVersion: container.cnrm.cloud.google.com/v1beta1
+kind: ContainerCluster
+metadata:
+  name: ${GKE_NAME}
+  namespace: ${TENANT_PROJECT_ID}
+  annotations:
+    cnrm.cloud.google.com/remove-default-node-pool: "true"
+    config.kubernetes.io/depends-on: compute.cnrm.cloud.google.com/namespaces/${TENANT_PROJECT_ID}/ComputeSubnetwork/${GKE_NAME}
+  labels:
+    mesh_id: proj-${TENANT_PROJECT_NUMBER}
+spec:
+  addonsConfig:
+    dnsCacheConfig:
+      enabled: true
+    gcePersistentDiskCsiDriverConfig:
+      enabled: true
+    httpLoadBalancing:
+      disabled: false
+  confidentialNodes:
+    enabled: true
+  datapathProvider: ADVANCED_DATAPATH
+  enableShieldedNodes: true
+  initialNodeCount: 1
+  ipAllocationPolicy:
+    servicesSecondaryRangeName: servicesrange
+    clusterSecondaryRangeName: clusterrange
+  location: ${GKE_LOCATION}
+  loggingConfig:
+    enableComponents:
+      - "SYSTEM_COMPONENTS"
+      - "WORKLOADS"
+  monitoringConfig:
+    enableComponents:
+      - "SYSTEM_COMPONENTS"
+  networkingMode: VPC_NATIVE
+  networkRef:
+    name: gke
+  nodeConfig:
+    machineType: n2d-standard-4
+  privateClusterConfig:
+    enablePrivateEndpoint: false
+    enablePrivateNodes: true
+    masterIpv4CidrBlock: 172.16.0.0/28
+  releaseChannel:
+    channel: RAPID
+  subnetworkRef:
+    name: gke
+  workloadIdentityConfig:
+    workloadPool: ${TENANT_PROJECT_ID}.svc.id.goog

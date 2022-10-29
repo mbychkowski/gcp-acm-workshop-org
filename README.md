@@ -1,59 +1,34 @@
 # GCP ACM / ASM Config Controller + Policy Controller setup
 
+## Demo setup
 
-## Initial setup of environment variables
+### Initial setup of environment variables
 
 Create a config shell script to create all environmnet variables
-
-
 
 Note:
 * To determine ip address: `curl -4 ifconfig.co`.
 
-## Stand up config controller instance
+### 1) Stand up config controller instance
 
-This step involves creating the network to host the GKE cluster instance of config controller running. This can be improved by not running in Auto mode for network.
+### X) Replace environment variables with actualy values
 
-```
-make cc-vpc
-```
+Navigate to new demo directory
 
 ```
-make cc-config-controller
+cd ./to/new/demo/dir
 ```
 
-To interact with the private `configcontroller` cluster we will create a jumpbox within GCP. Determine the ip range of the subnet running `configcontroller`
+Change variables
+
 
 ```
-gcloud compute networks subnets describe ${CONFIG_CONTROLLER_NETWORK}-vpc \
-    --region ${CONFIG_CONTROLLER_LOCATION} \
-    --format 'value(ipCidrRange)'
-```
-
-Replace that value within `.hack/config-controller/Makefile` command `k8s-admin-vm` as appropriate.
-
-```
-gcloud beta compute instances create k8s-admin \
-    ...
-    --private-network-ip=10.XXX.1.1
-    ...
-```
-
-To access cluster via cloud shell:
-
-```
-AUTHORIZED_SHELL_NETWORK=dig +short myip.opendns.com @resolver1.opendns.com
-
-gcloud container clusters update krmapihost-configcontroller  \
-    --enable-master-authorized-networks \
-    --master-authorized-networks ${AUTHORIZED_SHELL_NETWORK}/32 \
-    --region ${CONFIG_CONTROLLER_LOCATION} \
-    --project ${CONFIG_CONTROLLER_PROJECT_ID}
-```
-
-Get the Config Controller instance credentials
-
-```
-gcloud anthos config controller get-credentials ${CONFIG_CONTROLLER_NAME} \
-    --location ${CONFIG_CONTROLLER_LOCATION}
+sed -i 's/${GKE_NAME}/'"$GKE_NAME"'/g' ./**/*.yaml
+sed -i 's/${GKE_SA}/'"$GKE_SA"'/g' ./**/*.yaml
+sed -i 's/${GKE_LOCATION}/'"$GKE_LOCATION"'/g' ./**/*.yaml
+sed -i 's\${GKE_PLATFORM_REPO_URL}\'"$GKE_PLATFORM_REPO_URL"'\g' ./**/*.yaml
+sed -i 's/${GKE_CONFIGS_REPO_URL}/'"$GKE_CONFIGS_REPO_URL"'/g' ./**/*.yaml
+sed -i 's/${TENANT_PROJECT_ID}/'"$TENANT_PROJECT_ID"'/g' ./**/*.yaml
+sed -i 's/${TENANT_PROJECT_NUMBER}/'"$TENANT_PROJECT_NUMBER"'/g' ./**/*.yaml
+sed -i 's\${TENANT_PROJECT_SA_EMAIL}\'"$TENANT_PROJECT_SA_EMAIL"'\g' ./**/*.yaml
 ```

@@ -9,7 +9,7 @@ spec:
     repo: git@github.com:mbychkowski/gcp-acm-workshop-org.git
     revision: HEAD
     branch: main
-    dir: demo
+    dir: demo/valinor-realm-2/org-project
     auth: ssh
     secretRef:
       name: git-creds
