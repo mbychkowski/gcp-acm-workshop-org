@@ -1,0 +1,29 @@
+apiVersion: container.cnrm.cloud.google.com/v1beta1
+kind: ContainerNodePool
+metadata:
+  name: primary
+  namespace: ${TENANT_PROJECT_ID}
+  annotations:
+    config.kubernetes.io/depends-on: container.cnrm.cloud.google.com/namespaces/${TENANT_PROJECT_ID}/ContainerCluster/${GKE_NAME}
+spec:
+  clusterRef:
+    name: ${GKE_NAME}
+  initialNodeCount: 1
+  location: ${GKE_LOCATION}
+  management:
+    autoRepair: true
+    autoUpgrade: true
+  nodeConfig:
+    imageType: COS_CONTAINERD
+    diskSizeGb: 100
+    diskType: pd-ssd
+    labels:
+      gke.io/nodepool: primary
+    machineType: n2d-standard-4
+    oauthScopes:
+      - https://www.googleapis.com/auth/cloud-platform
+    shieldedInstanceConfig:
+      enableIntegrityMonitoring: true
+      enableSecureBoot: true
+    serviceAccountRef:
+      name: ${GKE_SA}
