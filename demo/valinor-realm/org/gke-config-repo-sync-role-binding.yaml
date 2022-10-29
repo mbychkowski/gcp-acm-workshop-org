@@ -2,10 +2,10 @@ apiVersion: rbac.authorization.k8s.io/v1
 kind: RoleBinding
 metadata:
   name: syncs-repo
-  namespace: prj-bych-gke-lab001
+  namespace: valinor-realm
 subjects:
 - kind: ServiceAccount
-  name: ns-reconciler-prj-bych-gke-lab001
+  name: ns-reconciler-valinor-realm
   namespace: config-management-system
 roleRef:
   kind: ClusterRole

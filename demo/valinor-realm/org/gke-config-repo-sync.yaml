@@ -2,11 +2,11 @@ apiVersion: configsync.gke.io/v1beta1
 kind: RepoSync
 metadata:
   name: repo-sync
-  namespace: prj-bych-gke-lab001
+  namespace: valinor-realm
 spec:
   sourceFormat: unstructured
   git:
-   repo: https://github.com/mbychkowski/gcp-acm-workshop-tenant-project
+   repo: git@github.com:mbychkowski/gcp-acm-workshop-org.git
    revision: HEAD
    branch: main
    dir: "."

@@ -1,13 +1,13 @@
 apiVersion: container.cnrm.cloud.google.com/v1beta1
 kind: ContainerCluster
 metadata:
-  name: ${GKE_NAME}
-  namespace: ${TENANT_PROJECT_ID}
+  name: first-k8s-acm-cluster
+  namespace: valinor-realm
   annotations:
     cnrm.cloud.google.com/remove-default-node-pool: "true"
-    config.kubernetes.io/depends-on: compute.cnrm.cloud.google.com/namespaces/${TENANT_PROJECT_ID}/ComputeSubnetwork/${GKE_NAME}
+    config.kubernetes.io/depends-on: compute.cnrm.cloud.google.com/namespaces/valinor-realm/ComputeSubnetwork/first-k8s-acm-cluster
   labels:
-    mesh_id: proj-${TENANT_PROJECT_NUMBER}
+    mesh_id: proj-512806283726
 spec:
   addonsConfig:
     dnsCacheConfig:
@@ -24,7 +24,7 @@ spec:
   ipAllocationPolicy:
     servicesSecondaryRangeName: servicesrange
     clusterSecondaryRangeName: clusterrange
-  location: ${GKE_LOCATION}
+  location: us-central1
   loggingConfig:
     enableComponents:
       - "SYSTEM_COMPONENTS"
@@ -46,4 +46,4 @@ spec:
   subnetworkRef:
     name: gke
   workloadIdentityConfig:
-    workloadPool: ${TENANT_PROJECT_ID}.svc.id.goog
+    workloadPool: valinor-realm.svc.id.goog

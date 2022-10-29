@@ -1,7 +1,7 @@
 apiVersion: iam.cnrm.cloud.google.com/v1beta1
 kind: IAMServiceAccount
 metadata:
-  name: ${GKE_SA}
-  namespace: ${TENANT_PROJECT_ID}
+  name: gke-primary-pool
+  namespace: valinor-realm
 spec:
-  displayName: ${GKE_SA}
+  displayName: gke-primary-pool

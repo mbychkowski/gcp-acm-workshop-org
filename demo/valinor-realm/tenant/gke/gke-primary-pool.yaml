@@ -2,14 +2,14 @@ apiVersion: container.cnrm.cloud.google.com/v1beta1
 kind: ContainerNodePool
 metadata:
   name: primary
-  namespace: ${TENANT_PROJECT_ID}
+  namespace: valinor-realm
   annotations:
-    config.kubernetes.io/depends-on: container.cnrm.cloud.google.com/namespaces/${TENANT_PROJECT_ID}/ContainerCluster/${GKE_NAME}
+    config.kubernetes.io/depends-on: container.cnrm.cloud.google.com/namespaces/valinor-realm/ContainerCluster/first-k8s-acm-cluster
 spec:
   clusterRef:
-    name: ${GKE_NAME}
+    name: first-k8s-acm-cluster
   initialNodeCount: 1
-  location: ${GKE_LOCATION}
+  location: us-central1
   management:
     autoRepair: true
     autoUpgrade: true
@@ -26,4 +26,4 @@ spec:
       enableIntegrityMonitoring: true
       enableSecureBoot: true
     serviceAccountRef:
-      name: ${GKE_SA}
+      name: gke-primary-pool
