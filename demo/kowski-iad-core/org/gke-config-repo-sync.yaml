@@ -13,4 +13,4 @@ spec:
     auth: none
     auth: ssh
     secretRef:
-      name: config-management-system/git-creds
+      name: git-creds
