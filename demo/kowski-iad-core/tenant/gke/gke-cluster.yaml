@@ -32,8 +32,8 @@ spec:
     enableComponents:
       - "SYSTEM_COMPONENTS"
   networkingMode: VPC_NATIVE
-  networkRef:
-    name: vpc-iad-net
+  # networkRef:
+  #   name: vpc-iad-net
   nodeConfig:
     machineType: n2d-standard-4
   privateClusterConfig:
@@ -42,7 +42,7 @@ spec:
     masterIpv4CidrBlock: 172.16.0.0/28
   releaseChannel:
     channel: RAPID
-  subnetworkRef:
-    name: vpc-iad-net
+  # subnetworkRef:
+  #   name: vpc-iad-net
   workloadIdentityConfig:
     workloadPool: kowski-iad-core.svc.id.goog
