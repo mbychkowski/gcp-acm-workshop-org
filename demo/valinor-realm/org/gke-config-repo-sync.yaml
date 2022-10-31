@@ -10,4 +10,6 @@ spec:
     revision: HEAD
     branch: main
     dir: demo/valinor-realm/tenant
-    auth: none
+    auth: ssh
+    secretRef:
+      name: git-creds    

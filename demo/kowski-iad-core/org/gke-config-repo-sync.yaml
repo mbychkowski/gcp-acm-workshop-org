@@ -10,7 +10,6 @@ spec:
     revision: HEAD
     branch: main
     dir: demo/kowski-iad-core/tenant
-    auth: none
     auth: ssh
     secretRef:
       name: git-creds
