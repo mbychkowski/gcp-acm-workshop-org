@@ -9,7 +9,7 @@
 #   clusterRef:
 #     name: first-k8s-acm-cluster
 #   initialNodeCount: 1
-#   location: us-central1
+#   location: us-east1
 #   management:
 #     autoRepair: true
 #     autoUpgrade: true

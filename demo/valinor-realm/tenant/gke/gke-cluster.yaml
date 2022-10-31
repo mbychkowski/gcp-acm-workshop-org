@@ -23,7 +23,7 @@
 #   ipAllocationPolicy:
 #     servicesSecondaryRangeName: svc
 #     clusterSecondaryRangeName: pod
-#   location: us-central1
+#   location: us-east1
 #   loggingConfig:
 #     enableComponents:
 #       - "SYSTEM_COMPONENTS"
