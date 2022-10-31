@@ -5,4 +5,5 @@ metadata:
   # ConfigConnector resource installed in your cluster
   name: configconnector.core.cnrm.cloud.google.com
 spec:
+  mode: cluster
   googleServiceAccount: "valinor-realm@valinor-realm.iam.gserviceaccount.com"
