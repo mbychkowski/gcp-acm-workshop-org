@@ -19,8 +19,8 @@ spec:
   enableShieldedNodes: true
   initialNodeCount: 1
   ipAllocationPolicy:
-    servicesSecondaryRangeName: servicesrange
-    clusterSecondaryRangeName: clusterrange
+    servicesSecondaryRangeName: svc
+    clusterSecondaryRangeName: pod
   location: us-central1
   loggingConfig:
     enableComponents:
