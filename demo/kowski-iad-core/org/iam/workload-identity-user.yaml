@@ -1,14 +1,14 @@
-# apiVersion: iam.cnrm.cloud.google.com/v1beta1
-# kind: IAMPartialPolicy
-# metadata:
-#   name: kowski-iad-core-sa-wi-user
-#   namespace: config-control
-# spec:
-#   resourceRef:
-#     apiVersion: iam.cnrm.cloud.google.com/v1beta1
-#     name: kowski-iad-core
-#     kind: IAMServiceAccount
-#   bindings:
-#     - role: roles/iam.workloadIdentityUser
-#       members:
-#         - member: serviceAccount:kowski-iad-core.svc.id.goog[cnrm-system/cnrm-controller-manager-kowski-iad-core]
+apiVersion: iam.cnrm.cloud.google.com/v1beta1
+kind: IAMPartialPolicy
+metadata:
+  name: kowski-iad-core-sa-wi-user
+  namespace: config-control
+spec:
+  resourceRef:
+    apiVersion: iam.cnrm.cloud.google.com/v1beta1
+    name: kowski-iad-core
+    kind: IAMServiceAccount
+  bindings:
+    - role: roles/iam.workloadIdentityUser
+      members:
+        - member: serviceAccount:kowski-iad-core.svc.id.goog[cnrm-system/cnrm-controller-manager-kowski-iad-core]
