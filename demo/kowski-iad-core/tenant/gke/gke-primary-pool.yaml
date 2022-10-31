@@ -19,7 +19,7 @@ spec:
     diskType: pd-ssd
     labels:
       gke.io/nodepool: primary
-    machineType: n2d-standard-4
+    machineType: e2-standard-2
     oauthScopes:
       - https://www.googleapis.com/auth/cloud-platform
     shieldedInstanceConfig:
