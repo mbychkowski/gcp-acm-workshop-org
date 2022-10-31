@@ -1,0 +1,15 @@
+apiVersion: gkehub.cnrm.cloud.google.com/v1beta1
+kind: GKEHubMembership
+metadata:
+  name: ${GKE_NAME}
+  namespace: ${TENANT_PROJECT_ID}
+  annotations:
+    config.kubernetes.io/depends-on: container.cnrm.cloud.google.com/namespaces/${TENANT_PROJECT_ID}/ContainerCluster/${GKE_NAME}
+spec:
+  location: global
+  authority:
+    issuer: https://container.googleapis.com/v1/projects/${TENANT_PROJECT_ID}/locations/${GKE_LOCATION}/clusters/${GKE_NAME}
+  endpoint:
+    gkeCluster:
+      resourceRef:
+        name: ${GKE_NAME}

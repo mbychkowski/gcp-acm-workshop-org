@@ -33,3 +33,15 @@ sed -i 's\${TENANT_PROJECT_ID}\'"$TENANT_PROJECT_ID"'\g' **/**/*.yaml
 sed -i 's\${TENANT_PROJECT_NUMBER}\'"$TENANT_PROJECT_NUMBER"'\g' **/**/*.yaml
 sed -i 's\${TENANT_PROJECT_SA_EMAIL}\'"$TENANT_PROJECT_SA_EMAIL"'\g' **/**/*.yaml
 ```
+
+```
+sed -i 's\${GKE_NAME}\'"$GKE_NAME"'\g' *.yaml
+sed -i 's\${GKE_SA}\'"$GKE_SA"'\g' *.yaml
+sed -i 's\${GKE_LOCATION}\'"$GKE_LOCATION"'\g' *.yaml
+sed -i 's\${GKE_PLATFORM_REPO_URL}\'"$GKE_PLATFORM_REPO_URL"'\g' *.yaml
+sed -i 's\${GKE_CONFIGS_REPO_URL}\'"$GKE_CONFIGS_REPO_URL"'\g' *.yaml
+sed -i 's\${HOST_PROJECT_ID}\'"$HOST_PROJECT_ID"'\g' *.yaml
+sed -i 's\${TENANT_PROJECT_ID}\'"$TENANT_PROJECT_ID"'\g' *.yaml
+sed -i 's\${TENANT_PROJECT_NUMBER}\'"$TENANT_PROJECT_NUMBER"'\g' *.yaml
+sed -i 's\${TENANT_PROJECT_SA_EMAIL}\'"$TENANT_PROJECT_SA_EMAIL"'\g' *.yaml
+```
