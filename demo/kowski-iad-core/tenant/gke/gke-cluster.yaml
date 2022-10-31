@@ -15,8 +15,6 @@ spec:
       enabled: true
     httpLoadBalancing:
       disabled: false
-  confidentialNodes:
-    enabled: true
   datapathProvider: ADVANCED_DATAPATH
   enableShieldedNodes: true
   initialNodeCount: 1
