@@ -16,4 +16,4 @@ export GKE_CONFIGS_REPO_URL="https://github.com/mbychkowski/gcp-acm-workshop-gke
 export HOST_PROJECT_ID=kowski-iad-core
 export TENANT_PROJECT_ID=kowski-iad-core
 export TENANT_PROJECT_NUMBER=1026614741785
-export TENANT_PROJECT_SA_EMAIL=kowski-iad-core@kowski-iad-core.iam.gserviceaccount.
+export TENANT_PROJECT_SA_EMAIL=kowski-iad-core@kowski-iad-core.iam.gserviceaccount
