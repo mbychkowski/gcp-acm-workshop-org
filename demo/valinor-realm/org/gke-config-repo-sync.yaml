@@ -1,15 +1,15 @@
-# apiVersion: configsync.gke.io/v1beta1
-# kind: RepoSync
-# metadata:
-#   name: repo-sync
-#   namespace: valinor-realm
-# spec:
-#   sourceFormat: unstructured
-#   git:
-#     repo: git@github.com:mbychkowski/gcp-acm-workshop-org.git
-#     revision: HEAD
-#     branch: main
-#     dir: demo/valinor-realm/tenant
-#     auth: ssh
-#     secretRef:
-#       name: git-creds    
+apiVersion: configsync.gke.io/v1beta1
+kind: RepoSync
+metadata:
+  name: repo-sync
+  namespace: valinor-realm
+spec:
+  sourceFormat: unstructured
+  git:
+    repo: git@github.com:mbychkowski/gcp-acm-workshop-org.git
+    revision: HEAD
+    branch: main
+    dir: demo/valinor-realm/tenant
+    auth: ssh
+    secretRef:
+      name: git-creds
