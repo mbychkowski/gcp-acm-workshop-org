@@ -17,10 +17,10 @@ spec:
     configSync:
       sourceFormat: unstructured
       git:
-        policyDir: .
+        policyDir: demo
         secretType: none
         syncBranch: main
-        syncRepo: https://github.com/mbychkowski/gcp-acm-workshop-gke-configs.git
+        syncRepo: git@github.com:mbychkowski/gcp-acm-workshop-gke-configs.git
     policyController:
       enabled: true
       referentialRulesEnabled: true
