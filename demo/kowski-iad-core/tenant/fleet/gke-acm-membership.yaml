@@ -20,7 +20,7 @@ spec:
         policyDir: .
         secretType: none
         syncBranch: main
-        syncRepo: https://github.com/mbychkowski/gcp-acm-workshop-gke-configs
+        syncRepo: https://github.com/mbychkowski/gcp-acm-workshop-gke-configs.git
     policyController:
       enabled: true
       referentialRulesEnabled: true

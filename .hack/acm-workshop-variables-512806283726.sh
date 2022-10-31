@@ -10,7 +10,7 @@ export GKE_NAME=first-k8s-acm-cluster
 export GKE_SA=gke-primary-pool
 export GKE_LOCATION=us-central1
 export GKE_PLATFORM_REPO_URL=git@github.com:mbychkowski/gcp-acm-workshop-org.git
-export GKE_CONFIGS_REPO_URL="https://github.com/mbychkowski/gcp-acm-workshop-gke-configs"
+export GKE_CONFIGS_REPO_URL="https://github.com/mbychkowski/gcp-acm-workshop-gke-configs.git"
 
 # Unique. Check these
 export HOST_PROJECT_ID=valinor-realm
