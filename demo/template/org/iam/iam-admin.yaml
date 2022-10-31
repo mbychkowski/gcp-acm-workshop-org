@@ -1,15 +1,15 @@
 apiVersion: iam.cnrm.cloud.google.com/v1beta1
 kind: IAMPolicyMember
 metadata:
-  name: iam-admin-${TENANT_PROJECT_ID}
+  name: iam-admin-kowski-iad-core
   namespace: config-control
   annotations:
-    config.kubernetes.io/depends-on: iam.cnrm.cloud.google.com/namespaces/config-control/IAMServiceAccount/${TENANT_PROJECT_ID},resourcemanager.cnrm.cloud.google.com/namespaces/config-control/Project/${TENANT_PROJECT_ID}
+    config.kubernetes.io/depends-on: iam.cnrm.cloud.google.com/namespaces/config-control/IAMServiceAccount/kowski-iad-core,resourcemanager.cnrm.cloud.google.com/namespaces/config-control/Project/kowski-iad-core
 spec:
   memberFrom:
     serviceAccountRef:
-      name: ${TENANT_PROJECT_ID}
+      name: kowski-iad-core
   role: roles/resourcemanager.projectIamAdmin
   resourceRef:
     kind: Project
-    external: projects/${TENANT_PROJECT_ID}
+    external: projects/kowski-iad-core
