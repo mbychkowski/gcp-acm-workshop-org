@@ -16,4 +16,4 @@ export GKE_CONFIGS_REPO_URL="https://github.com/mbychkowski/gcp-acm-workshop-gke
 export HOST_PROJECT_ID=valinor-realm
 export TENANT_PROJECT_ID=valinor-realm
 export TENANT_PROJECT_NUMBER=512806283726
-export TENANT_PROJECT_SA_EMAIL=valinor-realm@valinor-realm.iam.gserviceaccount.
+export TENANT_PROJECT_SA_EMAIL=valinor-realm@valinor-realm.iam.gserviceaccount.com
