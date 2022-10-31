@@ -5,8 +5,8 @@ metadata:
   namespace: config-control
 spec:
   resourceRef:
-    name: kowski-iad-core
-    kind: projects/kowski-iad-core/serviceAccounts/kowski-iad-core@kowski-iad-core.iam.gserviceaccount.com
+    name: projects/kowski-iad-core/serviceAccounts/kowski-iad-core@kowski-iad-core.iam.gserviceaccount.com
+    kind: IAMServiceAccount
   bindings:
     - role: roles/iam.workloadIdentityUser
       members:
