@@ -6,7 +6,7 @@ metadata:
 spec:
   resourceRef:
     name: kowski-iad-core
-    kind: IAMServiceAccount
+    kind: projects/kowski-iad-core/serviceAccounts/kowski-iad-core@kowski-iad-core.iam.gserviceaccount.com
   bindings:
     - role: roles/iam.workloadIdentityUser
       members:
