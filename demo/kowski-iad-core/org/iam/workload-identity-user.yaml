@@ -5,6 +5,7 @@ metadata:
   namespace: config-control
 spec:
   resourceRef:
+    apiVersion: iam.cnrm.cloud.google.com/v1beta1
     name: projects/kowski-iad-core/serviceAccounts/kowski-iad-core@kowski-iad-core.iam.gserviceaccount.com
     kind: IAMServiceAccount
   bindings:
