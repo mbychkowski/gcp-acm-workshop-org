@@ -1,0 +1,10 @@
+apiVersion: gkehub.cnrm.cloud.google.com/v1beta1
+kind: GKEHubFeature
+metadata:
+  name: configmanagement
+  namespace: ${TENANT_PROJECT_ID}
+spec:
+  projectRef:
+    external: ${TENANT_PROJECT_ID}
+  location: global
+  resourceID: configmanagement
