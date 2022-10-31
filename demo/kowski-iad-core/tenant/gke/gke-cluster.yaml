@@ -1,48 +1,48 @@
-# apiVersion: container.cnrm.cloud.google.com/v1beta1
-# kind: ContainerCluster
-# metadata:
-#   name: first-k8s-acm-cluster
-#   namespace: kowski-iad-core
-#   annotations:
-#     cnrm.cloud.google.com/remove-default-node-pool: "true"
-#   labels:
-#     mesh_id: proj-1026614741785
-# spec:
-#   addonsConfig:
-#     dnsCacheConfig:
-#       enabled: true
-#     gcePersistentDiskCsiDriverConfig:
-#       enabled: true
-#     httpLoadBalancing:
-#       disabled: false
-#   confidentialNodes:
-#     enabled: true
-#   datapathProvider: ADVANCED_DATAPATH
-#   enableShieldedNodes: true
-#   initialNodeCount: 1
-#   ipAllocationPolicy:
-#     servicesSecondaryRangeName: servicesrange
-#     clusterSecondaryRangeName: clusterrange
-#   location: us-central1
-#   loggingConfig:
-#     enableComponents:
-#       - "SYSTEM_COMPONENTS"
-#       - "WORKLOADS"
-#   monitoringConfig:
-#     enableComponents:
-#       - "SYSTEM_COMPONENTS"
-#   networkingMode: VPC_NATIVE
-#   networkRef:
-#     external: "https://www.googleapis.com/compute/v1/projects/kowski-iad-core/global/networks/vpc-iad-net"
-#   nodeConfig:
-#     machineType: e2-standard-2
-#   privateClusterConfig:
-#     enablePrivateEndpoint: false
-#     enablePrivateNodes: true
-#     masterIpv4CidrBlock: 172.16.0.0/28
-#   releaseChannel:
-#     channel: RAPID
-#   subnetworkRef:
-#     external: "https://www.googleapis.com/compute/v1/projects/kowski-iad-core/regions/us-central1/subnetworks/vpc-iad-net"
-#   workloadIdentityConfig:
-#     workloadPool: kowski-iad-core.svc.id.goog
+apiVersion: container.cnrm.cloud.google.com/v1beta1
+kind: ContainerCluster
+metadata:
+  name: first-k8s-acm-cluster
+  namespace: kowski-iad-core
+  annotations:
+    cnrm.cloud.google.com/remove-default-node-pool: "true"
+  labels:
+    mesh_id: proj-1026614741785
+spec:
+  addonsConfig:
+    dnsCacheConfig:
+      enabled: true
+    gcePersistentDiskCsiDriverConfig:
+      enabled: true
+    httpLoadBalancing:
+      disabled: false
+  confidentialNodes:
+    enabled: true
+  datapathProvider: ADVANCED_DATAPATH
+  enableShieldedNodes: true
+  initialNodeCount: 1
+  ipAllocationPolicy:
+    servicesSecondaryRangeName: servicesrange
+    clusterSecondaryRangeName: clusterrange
+  location: us-central1
+  loggingConfig:
+    enableComponents:
+      - "SYSTEM_COMPONENTS"
+      - "WORKLOADS"
+  monitoringConfig:
+    enableComponents:
+      - "SYSTEM_COMPONENTS"
+  networkingMode: VPC_NATIVE
+  networkRef:
+    external: "https://www.googleapis.com/compute/v1/projects/kowski-iad-core/global/networks/vpc-iad-net"
+  nodeConfig:
+    machineType: e2-standard-2
+  privateClusterConfig:
+    enablePrivateEndpoint: false
+    enablePrivateNodes: true
+    masterIpv4CidrBlock: 172.16.0.0/28
+  releaseChannel:
+    channel: RAPID
+  subnetworkRef:
+    external: "https://www.googleapis.com/compute/v1/projects/kowski-iad-core/regions/us-central1/subnetworks/vpc-iad-net"
+  workloadIdentityConfig:
+    workloadPool: kowski-iad-core.svc.id.goog

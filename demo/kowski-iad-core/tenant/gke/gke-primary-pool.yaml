@@ -1,29 +1,29 @@
-# apiVersion: container.cnrm.cloud.google.com/v1beta1
-# kind: ContainerNodePool
-# metadata:
-#   name: primary
-#   namespace: kowski-iad-core
-#   annotations:
-#     config.kubernetes.io/depends-on: container.cnrm.cloud.google.com/namespaces/kowski-iad-core/ContainerCluster/first-k8s-acm-cluster
-# spec:
-#   clusterRef:
-#     name: first-k8s-acm-cluster
-#   initialNodeCount: 1
-#   location: us-central1
-#   management:
-#     autoRepair: true
-#     autoUpgrade: true
-#   nodeConfig:
-#     imageType: COS_CONTAINERD
-#     diskSizeGb: 100
-#     diskType: pd-ssd
-#     labels:
-#       gke.io/nodepool: primary
-#     machineType: e2-standard-2
-#     oauthScopes:
-#       - https://www.googleapis.com/auth/cloud-platform
-#     shieldedInstanceConfig:
-#       enableIntegrityMonitoring: true
-#       enableSecureBoot: true
-#     serviceAccountRef:
-#       name: gke-primary-pool
+apiVersion: container.cnrm.cloud.google.com/v1beta1
+kind: ContainerNodePool
+metadata:
+  name: primary
+  namespace: kowski-iad-core
+  annotations:
+    config.kubernetes.io/depends-on: container.cnrm.cloud.google.com/namespaces/kowski-iad-core/ContainerCluster/first-k8s-acm-cluster
+spec:
+  clusterRef:
+    name: first-k8s-acm-cluster
+  initialNodeCount: 1
+  location: us-central1
+  management:
+    autoRepair: true
+    autoUpgrade: true
+  nodeConfig:
+    imageType: COS_CONTAINERD
+    diskSizeGb: 100
+    diskType: pd-ssd
+    labels:
+      gke.io/nodepool: primary
+    machineType: e2-standard-2
+    oauthScopes:
+      - https://www.googleapis.com/auth/cloud-platform
+    shieldedInstanceConfig:
+      enableIntegrityMonitoring: true
+      enableSecureBoot: true
+    serviceAccountRef:
+      name: gke-primary-pool
