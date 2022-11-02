@@ -8,13 +8,6 @@ metadata:
   labels:
     mesh_id: proj-512806283726
 spec:
-  addonsConfig:
-    dnsCacheConfig:
-      enabled: true
-    gcePersistentDiskCsiDriverConfig:
-      enabled: true
-    httpLoadBalancing:
-      disabled: false
   datapathProvider: ADVANCED_DATAPATH
   enableShieldedNodes: false
   initialNodeCount: 1
@@ -23,22 +16,11 @@ spec:
     servicesSecondaryRangeName: svc
     clusterSecondaryRangeName: pod
   location: us-east1
-  loggingConfig:
-    enableComponents:
-      - "SYSTEM_COMPONENTS"
-      - "WORKLOADS"
-  monitoringConfig:
-    enableComponents:
-      - "SYSTEM_COMPONENTS"
   networkingMode: VPC_NATIVE
   networkRef:
     external: "https://www.googleapis.com/compute/v1/projects/valinor-realm/global/networks/main-vpc"
   nodeConfig:
     machineType: e2-standard-4
-  privateClusterConfig:
-    enablePrivateEndpoint: false
-    enablePrivateNodes: true
-    masterIpv4CidrBlock: 172.16.71.160/28
   releaseChannel:
     channel: RAPID
   subnetworkRef:
