@@ -20,6 +20,9 @@ spec:
     labels:
       gke.io/nodepool: primary
     machineType: e2-standard-4
+    shieldedInstanceConfig:
+      enableIntegrityMonitoring: true
+      enableSecureBoot: true
     oauthScopes:
       - https://www.googleapis.com/auth/cloud-platform
     serviceAccountRef:
