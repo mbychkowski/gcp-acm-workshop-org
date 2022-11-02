@@ -16,6 +16,7 @@ spec:
     httpLoadBalancing:
       disabled: false
   datapathProvider: ADVANCED_DATAPATH
+  enableShieldedNodes: false
   initialNodeCount: 1
   defaultMaxPodsPerNode: 30
   ipAllocationPolicy:
