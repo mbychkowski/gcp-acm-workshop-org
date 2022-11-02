@@ -18,6 +18,7 @@ spec:
   datapathProvider: ADVANCED_DATAPATH
   enableShieldedNodes: true
   initialNodeCount: 1
+  defaultMaxPodsPerNode: 30
   ipAllocationPolicy:
     servicesSecondaryRangeName: svc
     clusterSecondaryRangeName: pod
