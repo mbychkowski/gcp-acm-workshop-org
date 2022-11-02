@@ -10,6 +10,7 @@ metadata:
 spec:
   initialNodeCount: 1
   defaultMaxPodsPerNode: 30
+  enableShieldedNodes: true
   ipAllocationPolicy:
     servicesSecondaryRangeName: svc
     clusterSecondaryRangeName: pod
@@ -19,6 +20,9 @@ spec:
     external: "https://www.googleapis.com/compute/v1/projects/valinor-realm/global/networks/main-vpc"
   nodeConfig:
     machineType: e2-standard-4
+    shieldedInstanceConfig:
+      enableIntegrityMonitoring: true
+      enableSecureBoot: true
   releaseChannel:
     channel: RAPID
   subnetworkRef:
