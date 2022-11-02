@@ -8,8 +8,6 @@ metadata:
   labels:
     mesh_id: proj-512806283726
 spec:
-  datapathProvider: ADVANCED_DATAPATH
-  enableShieldedNodes: false
   initialNodeCount: 1
   defaultMaxPodsPerNode: 30
   ipAllocationPolicy:
