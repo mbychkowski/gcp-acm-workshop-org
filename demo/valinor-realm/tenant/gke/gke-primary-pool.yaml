@@ -9,7 +9,7 @@ spec:
   clusterRef:
     name: first-k8s-acm-cluster
   initialNodeCount: 1
-  location: us-east1
+  location: us-east4
   management:
     autoRepair: true
     autoUpgrade: true
