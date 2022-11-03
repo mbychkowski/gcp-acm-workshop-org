@@ -1,0 +1,10 @@
+apiVersion: gkehub.cnrm.cloud.google.com/v1beta1
+kind: GKEHubFeature
+metadata:
+  name: configmanagement
+  namespace: valinor-realm
+spec:
+  projectRef:
+    external: valinor-realm
+  location: global
+  resourceID: configmanagement
