@@ -3,8 +3,8 @@ kind: GKEHubFeatureMembership
 metadata:
   name: first-k8s-acm-cluster-acm-membership
   namespace: valinor-realm
-  annotations:
-    config.kubernetes.io/depends-on: gkehub.cnrm.cloud.google.com/namespaces/valinor-realm/GKEHubMembership/first-k8s-acm-cluster,gkehub.cnrm.cloud.google.com/namespaces/valinor-realm/GKEHubFeature/configmanagement
+  # annotations:
+  #   config.kubernetes.io/depends-on: gkehub.cnrm.cloud.google.com/namespaces/valinor-realm/GKEHubMembership/first-k8s-acm-cluster,gkehub.cnrm.cloud.google.com/namespaces/valinor-realm/GKEHubFeature/configmanagement
 spec:
   projectRef:
     external: valinor-realm
