@@ -1,0 +1,17 @@
+apiVersion: configsync.gke.io/v1beta1
+kind: RootSync
+metadata:
+  name: root-sync
+  namespace: config-management-system
+spec:
+  override:
+    gitSyncDepth: 0
+  sourceFormat: unstructured
+  git:
+    repo: git@github.com:mbychkowski/gcp-acm-workshop-org
+    revision: HEAD
+    branch: main
+    dir: demo/valinor-realm/org
+    auth: ssh
+    secretRef:
+      name: git-creds
