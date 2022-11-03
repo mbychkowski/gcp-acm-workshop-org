@@ -14,7 +14,7 @@ spec:
   ipAllocationPolicy:
     servicesSecondaryRangeName: svc
     clusterSecondaryRangeName: pod
-  location: us-east4
+  location: us-east1
   networkingMode: VPC_NATIVE
   networkRef:
     external: "https://www.googleapis.com/compute/v1/projects/valinor-realm/global/networks/main-vpc"
