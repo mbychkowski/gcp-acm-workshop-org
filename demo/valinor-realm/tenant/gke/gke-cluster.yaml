@@ -26,7 +26,7 @@
 #   privateClusterConfig:
 #     enablePrivateEndpoint: false
 #     enablePrivateNodes: true
-#     masterIpv4CidrBlock: 172.16.0.0/28      
+#     masterIpv4CidrBlock: 172.16.0.0/28
 #   releaseChannel:
 #     channel: RAPID
 #   subnetworkRef:
