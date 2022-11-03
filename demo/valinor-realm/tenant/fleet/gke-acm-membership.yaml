@@ -18,9 +18,9 @@ spec:
       sourceFormat: unstructured
       git:
         policyDir: demo/valinor-realm/gke-configs
-        secretType: none
+        secretType: ssh
         syncBranch: main
-        syncRepo: https://github.com/mbychkowski/gcp-acm-workshop-org.git
+        syncRepo: git@github.com:mbychkowski/gcp-acm-workshop-gke-configs.git
     policyController:
       enabled: true
       referentialRulesEnabled: true
