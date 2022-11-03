@@ -7,9 +7,9 @@ spec:
   match:
     kinds:
       - apiGroups:
-          - container.cnrm.cloud.google.com
+          - ""
         kinds:
-          - ContainerCluster
+          - Namespace
   parameters:
     labels:
     - allowedRegex: billing-*
