@@ -8,7 +8,7 @@ metadata:
 spec:
   location: global
   authority:
-    issuer: https://container.googleapis.com/v1/projects/valinor-realm/locations/us-central1/clusters/first-k8s-acm-cluster
+    issuer: https://container.googleapis.com/v1/projects/valinor-realm/locations/us-east1/clusters/first-k8s-acm-cluster
   endpoint:
     gkeCluster:
       resourceRef:
