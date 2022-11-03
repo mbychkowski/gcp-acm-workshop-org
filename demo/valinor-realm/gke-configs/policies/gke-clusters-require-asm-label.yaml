@@ -12,5 +12,5 @@ spec:
           - ContainerCluster
   parameters:
     labels:
-    - allowedRegex: proj-*
-      key: mesh_id
+    - allowedRegex: billing-*
+      key: billingId

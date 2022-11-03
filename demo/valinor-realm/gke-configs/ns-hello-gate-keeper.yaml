@@ -3,5 +3,7 @@ kind: Namespace
 metadata:
   creationTimestamp: null
   name: hello-gatekeeper
+  labels:
+    billingId: billing-12345678
 spec: {}
 status: {}
