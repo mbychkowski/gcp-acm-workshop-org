@@ -20,7 +20,7 @@ spec:
         policyDir: demo/valinor-realm/gke-configs
         secretType: ssh
         syncBranch: main
-        syncRepo: git@github.com:mbychkowski/gcp-acm-workshop-gke-configs.git
+        syncRepo: git@github.com:mbychkowski/gcp-acm-workshop-org.git
     policyController:
       enabled: true
       referentialRulesEnabled: true
